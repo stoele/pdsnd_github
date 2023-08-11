@@ -4,6 +4,8 @@ This documentation shows information about how to use the Bikeshare project.
 ## How to run
 After locating the file, type `python bikeshare.py` into the terminal to run using Python3.
 
+### Variables that must be specified
+
 
 ## Information
 
