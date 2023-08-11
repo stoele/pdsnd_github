@@ -5,6 +5,13 @@ This documentation shows information about how to use the Bikeshare project.
 After locating the file, type `python bikeshare.py` into the terminal to run using Python3.
 
 ### Variables that must be specified
+The user is asked to specify a city, a month and day.
+
+- Allowed input for city: `chicago`, `new_york_city`, `washington`
+- Allowed input for month: `all`, `january`, `february`, `march`, `april`, `may`, `june`
+- Allowed input for day: `all`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `sunday`
+
+When `all` is specified, no filter is used.
 
 
 ## Information
