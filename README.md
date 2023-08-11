@@ -7,18 +7,18 @@ After locating the file, type `python bikeshare.py` into the terminal to run usi
 
 ## Information
 
-### Date created
-Include the date you created this project and README file.
-
-### Project Title
-Replace the Project Title
+### Last updated
+`The bikeshare.py` file was last updated 10.08.2023.
 
 ### Description
-Describe what your project is about and what it does
+The Bikeshare project filters a bikeshare dataset based on the user's input.
 
 ### Files used
-Include the files used
+The project is based on the current input files:
+- chicago.csv
+- new_york_city.csv
+- washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+The project is part of a degree at Udacity.
 
