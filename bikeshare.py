@@ -1,4 +1,4 @@
-### Python Udacity Eirik Støle Hanssen
+### Python Udacity Eirik Stoe.le Hanssen
 
 import time
 import pandas as pd
@@ -21,6 +21,33 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+def user_input (start_message, question_message, correct_input, wrong_message):
+    '''
+    Ask user to specify a value from a defined list and output this value.
+
+    Args:
+        (str) start_message - what user should be told first
+        (str) question_message - what is the question being asked
+        (list) correct_input - correct input that the user can input
+        (str) wrong_message - what message should be if user inputs wrong
+    Returns:
+        variable - one of outputs defined in correct_input
+    '''
+
+    print(start_message)
+    while True:
+        variable = (input(question_message)).lower()
+        try:
+            if variable in correct_input:
+                print('You entered {}, a valid input.'.format(variable.title()))
+                break
+            else:
+                print(wrong_message)
+        except ValueError:
+            print('Wrong input')
+    return variable
+
+
 
 def get_filters():
     """
@@ -33,17 +60,12 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    print('You can choose between 3 cities: Chicago, New York City and Washington')
-    while True:
-        city = (input('Please enter the city you want to take a look at: ')).lower()
-        try:
-            if city in ['chicago', 'new york city', 'washington']:
-                print('You entered {}, a valid input.'.format(city.title()))
-                break
-            else:
-                print('Wrong input. Please enter one of the following city names: Chicago, New York City or Washington')
-        except ValueError:
-            print('Wrong input')   
+    city = user_input(
+        'You can choose between 3 cities: Chicago, New York City and Washington',
+        'Please enter the city you want to take a look at: ',
+        ['chicago', 'new york city', 'washington'],
+        'Wrong input. Please enter one of the following city names: Chicago, New York City or Washington'
+        )
     # TO DO: get user input for month (all, january, february, ... , june)
     print('You can choose between all months in the sample or a specific month between January and June')
     while True:
