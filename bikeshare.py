@@ -67,29 +67,19 @@ def get_filters():
         'Wrong input. Please enter one of the following city names: Chicago, New York City or Washington'
         )
     # TO DO: get user input for month (all, january, february, ... , june)
-    print('You can choose between all months in the sample or a specific month between January and June')
-    while True:
-        month = str(input('Please enter the month you want to take a look at. For no filtering, please enter: "all".')).lower()
-        try:
-            if month in ['january','february','march', 'april', 'may', 'june', 'all']:
-                print('You entered {}, a valid input.'.format(month.title()))
-                break
-            else:
-                print('Wrong input. Please enter one of the following: January, February, March, April, May, June or all.')
-        except ValueError:
-            print('Wrong input')    
+    month = user_input(
+        'You can choose between all months in the sample or a specific month between January and June',
+        'Please enter the month you want to take a look at. For no filtering, please enter: "all".',
+        ['january','february','march', 'april', 'may', 'june', 'all'],
+        'Wrong input. Please enter one of the following: January, February, March, April, May, June or all.'
+        )  
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    print('Which day do you want to take a look at?')
-    while True:
-        day = str(input('Please enter the day you want to look at. For no filtering, please enter: "all".')).lower()
-        try:
-            if day in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
-                print('You entered {}, a valid input.'.format(day.title()))
-                break
-            else:
-                print('Wrong input. Please enter one of the following: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all.')
-        except ValueError:
-            print('Wrong input')
+    day = user_input(
+        'Which day do you want to take a look at?',
+        'Please enter the day you want to look at. For no filtering, please enter: "all".',
+        ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all'],
+        'Wrong input. Please enter one of the following: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all.'
+        )
 
     print('-'*40)
     return city, month, day
